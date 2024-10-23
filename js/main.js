@@ -125,10 +125,19 @@
         }
     });
 
+    const $callbackButton = $('#callback-button');
+    const $callbackForm = $('#callback-form');
+
+    $callbackButton.on('click', function () {
+        $callbackForm.toggle();
+    });
+
+
+    const backToTop = $('.back-to-top');
+    const callUs = $('.callback-widget');
     
    // Back to top button
     $(window).scroll(function () {
-        const backToTop = $('.back-to-top');
         const scrollTop = $(this).scrollTop();
         const scrollableHeight = $(document).height() - 100;
 
@@ -142,12 +151,14 @@
         // Change bottom position of the button based on whether the user has scrolled to the bottom
         if (scrollTop + $(window).height() >= scrollableHeight) {
             backToTop.css('bottom', '100px');
+            callUs.css('bottom', '100px');
         } else {
             backToTop.css('bottom', '30px');
+            callUs.css('bottom', '30px');
         }
     });
 
-    $('.back-to-top').click(function () {
+    backToTop.click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });

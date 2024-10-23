@@ -918,3 +918,30 @@
     height: 20px;
     width: 70px;
 }
+
+/* styles.css */
+.callback-widget {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+}
+
+.btn-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.callback-form {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
