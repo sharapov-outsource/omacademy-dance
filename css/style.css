@@ -912,3 +912,8 @@
     background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+
+.sharapov > svg {
+    height: 20px;
+    width: 70px;
+}

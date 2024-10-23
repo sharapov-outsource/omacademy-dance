@@ -157,20 +157,30 @@
 
     
    // Back to top button
-   $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
+    $(window).scroll(function () {
+        const backToTop = $('.back-to-top');
+        const scrollTop = $(this).scrollTop();
+        const scrollableHeight = $(document).height() - 100;
+
+        // Show or hide the button based on scroll position
+        if (scrollTop > 500) {
+            backToTop.fadeIn('slow');
+        } else {
+            backToTop.fadeOut('slow');
+        }
+
+        // Change bottom position of the button based on whether the user has scrolled to the bottom
+        if (scrollTop + $(window).height() >= scrollableHeight) {
+            backToTop.css('bottom', '100px');
+        } else {
+            backToTop.css('bottom', '30px');
+        }
     });
+
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
-
-
-   
 
 })(jQuery);
 
